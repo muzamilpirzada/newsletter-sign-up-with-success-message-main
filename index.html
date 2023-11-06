@@ -23,8 +23,11 @@
   <li>Measuring to ensure updates are a success</li>
   <li>And much more!</li>
   </ul>
-  <label>Email address</label>
-  <input  type="email" name="" placeholder="email@example.com" id="emailaddress1">
+    <div class="error">
+      <label>Email address</label>
+      <p id="error"></p>
+    </div>
+  <input  type="text" name="" placeholder="email@example.com" id="emailaddress1">
 
   <button>Subscribe to monthly newsletter</button>
   </form>
@@ -41,16 +44,30 @@
   </div> -->
   <script>
     let emailaddress =document.getElementById('emailaddress1');
+    let  error =document.getElementById('error');
     let flag =1;
+    let success_url ="success.html";
     function validationFrom(){
-      if(emailaddress.value == ""){
-        emailaddress.style.backgroundColor="red";
-        flag =0;
+      // if(emailaddress.value == ""){
+      //   emailaddress.style.backgroundColor="red";
+      //   flag =0;
+      // }
+       if(!emailaddress.value.match(/^[A-za-z\._\-0-9]*[@][A-za-z]*[\.][a-z]{2,4}$/)){
+        emailaddress.style.backgroundColor="#ffe8e6";
+        emailaddress.style.border = "1px solid #d9726a";
+        error.innerText="Valid email required"
+        flag =0
+
       }
-      else if(emailaddress.value.length<3){
-        emailaddress.style.backgroundColor="green";
-        flag =0;
-      };
+      else{
+        
+        emailaddress.style.backgroundColor="white";
+        error.innerText=""
+        flag =1;
+        window.open(success_url);
+      }
+
+
       if(flag){
         return true;
       }
