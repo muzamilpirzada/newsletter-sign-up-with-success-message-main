@@ -67,22 +67,15 @@ html, body{
     font-size: 14px;
     margin: 10px 0;
 
-    
   }
   .main-container .inner-section form ul{
     margin-left: 20px;
     list-style: none outside url(assets/images/icon-list.svg);
-    
-
-    
-    
+  
   }
   .main-container .inner-section form ul li{
-    
     margin-block: 13px;
     font-size: 14px;
-    
-  
   }
   .main-container .inner-section form #emailaddress1{
     width: 90%;
@@ -121,21 +114,28 @@ html, body{
     
     
   }
+
+  .active{
+    background : linear-gradient(to right,var(--orange-), var(--Tomato-)) ;
+    box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
+    -webkit-box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
+    -moz-box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
+  }
  
   .main-container .inner-section form button{
     width: 90%;
     padding: 13px ;
     border: none;
-    background : linear-gradient(to right,var(--orange-), var(--Tomato-)) ;
+    /* background : linear-gradient(to right,var(--orange-), var(--Tomato-)) ;
+     */
+     background-color: var(--Dark-Slate-Grey-);
     color: var(--White-);
     font-weight: bold;
     border-radius: 5px;
     margin-top: 20px;
-   
-    
-box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
--webkit-box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
--moz-box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
+    /* box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
+    -webkit-box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
+    -moz-box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257; */
   }
 
   .main-container .inner-section .svg-image{
@@ -151,5 +151,21 @@ box-shadow: 1px 10px 30px -10px #ff5274 ,1px 10px 30px -10px #ff6257;
     color: #d9726a;
      
     
+}
+
+@media (max-width:375px){
+
+  .main-container{
+    width: 100%;
+    height: 120%;
+  }
+  .main-container .inner-section{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column-reverse;
+
+}
 }
 

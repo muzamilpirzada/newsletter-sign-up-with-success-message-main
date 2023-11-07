@@ -29,7 +29,7 @@
     </div>
   <input  type="text" name="" placeholder="email@example.com" id="emailaddress1">
 
-  <button>Subscribe to monthly newsletter</button>
+  <button id="submit">Subscribe to monthly newsletter</button>
   </form>
   <!-- Sign-up form end -->
   <div class="svg-image">
@@ -43,6 +43,7 @@
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
   <script>
+    let submit = document.getElementById('submit');
     let emailaddress =document.getElementById('emailaddress1');
     let  error =document.getElementById('error');
     let flag =1;
@@ -56,11 +57,11 @@
         emailaddress.style.backgroundColor="#ffe8e6";
         emailaddress.style.border = "1px solid #d9726a";
         error.innerText="Valid email required"
+        submit.classList.remove('active');
         flag =0
 
       }
       else{
-        
         emailaddress.style.backgroundColor="white";
         error.innerText=""
         flag =1;
@@ -75,7 +76,19 @@
         return false;
       }
       
+ 
     }
+
+    emailaddress.addEventListener('keyup',(e)=>{
+      const value =e.currentTarget.value;
+      if(value===""){
+        submit.classList.remove('active');
+      }
+      else{
+        submit.classList.add('active');
+      }
+
+    })
   </script>
 </body>
 </html>
